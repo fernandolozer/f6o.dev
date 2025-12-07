@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web development best practices and tips">
+    <title>Web Development Best Practices</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">F6O.dev</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="post-content">
+            <header class="post-header">
+                <h1 class="post-title">Web Development Best Practices</h1>
+                <p class="post-meta">January 10, 2025</p>
+            </header>
+
+            <div class="post-body">
+                <p>Over the years, I've learned various best practices that make web development more efficient and maintainable. Here are some key principles I follow.</p>
+
+                <h2>1. Write Semantic HTML</h2>
+                <p>Using semantic HTML elements improves accessibility and SEO. Instead of using generic <code>&lt;div&gt;</code> tags everywhere, use meaningful elements like:</p>
+                <ul>
+                    <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li><code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code></li>
+                    <li><code>&lt;button&gt;</code> for clickable actions, not <code>&lt;div onclick&gt;</code></li>
+                </ul>
+
+                <h2>2. Mobile-First Responsive Design</h2>
+                <p>Start designing for mobile devices first, then add styles for larger screens. This approach ensures your site works well on all devices.</p>
+                <pre><code>/* Mobile styles first */
+.container {
+    padding: 1rem;
+}
+
+/* Then add desktop styles */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+}</code></pre>
+
+                <h2>3. Optimize Performance</h2>
+                <p>Page speed matters for user experience and SEO:</p>
+                <ul>
+                    <li>Minimize and compress CSS/JavaScript files</li>
+                    <li>Optimize images (use appropriate formats and sizes)</li>
+                    <li>Lazy load images below the fold</li>
+                    <li>Use browser caching effectively</li>
+                </ul>
+
+                <h2>4. Keep JavaScript Simple</h2>
+                <p>Not every project needs a heavy framework. For simple sites, vanilla JavaScript is often sufficient and faster:</p>
+                <pre><code>// Clean, simple DOM manipulation
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.btn');
+    button.addEventListener('click', handleClick);
+});</code></pre>
+
+                <h2>5. Maintain Consistent Code Style</h2>
+                <p>Consistency makes code easier to read and maintain. Use linters and formatters to enforce coding standards across your project.</p>
+
+                <h2>Conclusion</h2>
+                <p>These practices have served me well across many projects. They promote clean, maintainable code that performs well and provides a great user experience.</p>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="../blog.html" class="btn">← Back to Blog</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 F6O.dev. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

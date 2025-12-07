@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide to deploying static sites on GitHub Pages">
+    <title>Deploying to GitHub Pages</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">F6O.dev</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="post-content">
+            <header class="post-header">
+                <h1 class="post-title">Deploying to GitHub Pages</h1>
+                <p class="post-meta">January 5, 2025</p>
+            </header>
+
+            <div class="post-body">
+                <p>GitHub Pages is a fantastic free hosting solution for static websites. Here's a comprehensive guide to getting your site live.</p>
+
+                <h2>What is GitHub Pages?</h2>
+                <p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files directly from a GitHub repository and publishes them as a website.</p>
+
+                <h2>Step-by-Step Deployment</h2>
+
+                <h3>1. Create Your Repository</h3>
+                <p>First, create a new repository on GitHub. For a personal site, you can name it <code>username.github.io</code> or any other name.</p>
+
+                <h3>2. Add Your Files</h3>
+                <p>Push your HTML, CSS, and JavaScript files to the repository:</p>
+                <pre><code>git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/repo.git
+git push -u origin main</code></pre>
+
+                <h3>3. Enable GitHub Pages</h3>
+                <p>In your repository settings:</p>
+                <ul>
+                    <li>Go to Settings → Pages</li>
+                    <li>Under "Source", select the main branch</li>
+                    <li>Choose the root folder (or /docs if you prefer)</li>
+                    <li>Click Save</li>
+                </ul>
+
+                <h3>4. Access Your Site</h3>
+                <p>After a few minutes, your site will be available at:</p>
+                <ul>
+                    <li><code>https://username.github.io</code> (for username.github.io repos)</li>
+                    <li><code>https://username.github.io/repo-name</code> (for other repos)</li>
+                </ul>
+
+                <h2>Custom Domains</h2>
+                <p>You can also use a custom domain with GitHub Pages:</p>
+                <ol>
+                    <li>Add a <code>CNAME</code> file to your repository with your domain name</li>
+                    <li>Configure your DNS settings to point to GitHub's servers</li>
+                    <li>Enable HTTPS in the repository settings</li>
+                </ol>
+
+                <h2>Tips and Best Practices</h2>
+                <ul>
+                    <li>Use relative paths for assets to ensure compatibility</li>
+                    <li>Test locally before pushing changes</li>
+                    <li>GitHub Pages supports Jekyll, but you can disable it with a <code>.nojekyll</code> file</li>
+                    <li>Changes may take a few minutes to propagate</li>
+                </ul>
+
+                <h2>Limitations</h2>
+                <p>Keep in mind GitHub Pages has some limitations:</p>
+                <ul>
+                    <li>Only static files (no server-side code)</li>
+                    <li>1 GB repository size limit</li>
+                    <li>100 GB/month bandwidth soft limit</li>
+                    <li>10 builds per hour</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>GitHub Pages is perfect for portfolios, documentation, and blogs. It's free, reliable, and integrates seamlessly with your development workflow.</p>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="../blog.html" class="btn">← Back to Blog</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 F6O.dev. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
