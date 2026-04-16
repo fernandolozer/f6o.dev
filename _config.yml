@@ -1,0 +1,5 @@
+title: f6o.dev
+description: Personal site and blog
+url: "https://f6o.dev"
+baseurl: ""
+permalink: /posts/:title/

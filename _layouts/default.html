@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <title>{{ page.title }} - f6o.dev</title>
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ '/' | relative_url }}" class="logo">f6o.dev</a>
+            <ul class="nav-menu">
+                <li><a href="{{ '/' | relative_url }}"{% if page.nav_active == 'home' %} class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ '/blog' | relative_url }}"{% if page.nav_active == 'blog' %} class="active"{% endif %}>Blog</a></li>
+                <li><a href="{{ '/about' | relative_url }}"{% if page.nav_active == 'about' %} class="active"{% endif %}>About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} F6O.dev. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
