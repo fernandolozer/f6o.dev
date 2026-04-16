@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal site and blog">
-    <title>f6o.dev - Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">f6o.dev</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+---
+layout: default
+title: Home
+description: Personal site and blog
+nav_active: home
+---
+<section class="hero">
+    <h1>Welcome to f6o.dev</h1>
+    <p class="lead">A personal space for thoughts, projects, and technical insights.</p>
+</section>
+
+<section class="featured">
+    <h2>Latest Posts</h2>
+    <div class="posts-grid">
+        {% for post in site.posts limit:3 %}
+        <div class="post-card" onclick="window.location.href='{{ post.url }}'">
+            <h3>{{ post.title }}</h3>
+            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url }}" class="post-link">Read more →</a>
         </div>
-    </nav>
-
-    <main class="container">
-        <section class="hero">
-            <h1>Welcome to f6o.dev</h1>
-            <p class="lead">A personal space for thoughts, projects, and technical insights.</p>
-        </section>
-
-        <section class="featured">
-            <h2>Latest Posts</h2>
-            <div id="latest-posts" class="posts-grid">
-                <!-- Posts will be loaded dynamically -->
-            </div>
-            <a href="blog.html" class="btn">View All Posts →</a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 F6O.dev. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        {% endfor %}
+    </div>
+    <a href="{{ '/blog' | relative_url }}" class="btn">View All Posts →</a>
+</section>
