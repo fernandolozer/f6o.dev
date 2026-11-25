@@ -1,0 +1,22 @@
+# Site config for f6o.dev.
+# Lives in /etc/caddy/sites/ and is loaded by the main Caddyfile's import.
+
+f6o.dev {
+	root * /srv/apps/f6o.dev
+	encode zstd gzip
+	file_server
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	@html path / *.html
+	header @html Cache-Control "public, max-age=300"
+}
+
+www.f6o.dev {
+	redir https://f6o.dev{uri} permanent
+}
