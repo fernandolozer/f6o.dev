@@ -5,7 +5,7 @@
 set -euo pipefail
 
 HOST="${1:?usage: $0 user@host}"
-DEST=/srv/f6o.dev
+DEST=/srv/apps/f6o.dev
 SITES="${CADDY_SITES:-/etc/caddy/sites}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 

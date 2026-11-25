@@ -2,7 +2,7 @@
 # Lives in /etc/caddy/sites/ and is loaded by the main Caddyfile's import.
 
 f6o.dev {
-	root * /srv/f6o.dev
+	root * /srv/apps/f6o.dev
 	encode zstd gzip
 	file_server
 
