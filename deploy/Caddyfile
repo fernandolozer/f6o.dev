@@ -1,0 +1,26 @@
+# Add this block to /etc/caddy/Caddyfile on the VPS, then:
+#   sudo caddy validate --config /etc/caddy/Caddyfile
+#   sudo systemctl reload caddy
+#
+# Caddy obtains the TLS certificate automatically once the DNS A/AAAA
+# records for f6o.dev and www.f6o.dev point at the VPS.
+
+f6o.dev {
+	root * /srv/f6o.dev
+	encode zstd gzip
+	file_server
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	@html path / *.html
+	header @html Cache-Control "public, max-age=300"
+}
+
+www.f6o.dev {
+	redir https://f6o.dev{uri} permanent
+}

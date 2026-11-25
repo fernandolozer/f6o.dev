@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>f6o.dev</title>
+  <meta name="description" content="Fernando Lozer — software, projects and notes.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111'/><text x='16' y='22' font-family='monospace' font-size='15' fill='%23fff' text-anchor='middle'>f6o</text></svg>">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #1c1917;
+      --muted: #78716c;
+      --line: #e7e5e4;
+      --accent: #2563eb;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --fg: #e7e5e4;
+        --muted: #a8a29e;
+        --line: #292524;
+        --accent: #60a5fa;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 18vh 20px 48px;
+      flex: 1;
+    }
+    .mark {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      line-height: 1.15;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      margin: 8px 0 16px;
+    }
+    p.lead { color: var(--muted); max-width: 52ch; }
+    section { margin-top: 48px; }
+    h2 {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    ul { list-style: none; border-top: 1px solid var(--line); }
+    li { border-bottom: 1px solid var(--line); }
+    li a, li span.row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 12px 0;
+      color: inherit;
+      text-decoration: none;
+    }
+    li a:hover .name, li a:focus-visible .name { color: var(--accent); }
+    .name { font-weight: 550; }
+    .meta { font-family: var(--mono); font-size: 13px; color: var(--muted); text-align: right; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+    footer {
+      max-width: 640px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px 32px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">f6o.dev</div>
+    <h1>Fernando Lozer</h1>
+    <p class="lead">Software developer. This is where I keep my projects, experiments and the occasional note.</p>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <span class="row"><span class="name">AreaKids</span><span class="meta">web app</span></span>
+        </li>
+        <li>
+          <a href="https://github.com/fernandolozer/f6o.dev"><span class="name">f6o.dev</span><span class="meta">this site</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Elsewhere</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/fernandolozer" rel="me"><span class="name">GitHub</span><span class="meta">@fernandolozer</span></a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>&copy; <span id="y">2026</span> Fernando Lozer</footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
