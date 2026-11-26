@@ -5,4 +5,3 @@ baseurl: ""
 permalink: /posts/:title/
 exclude:
   - README.md
-  - CNAME
