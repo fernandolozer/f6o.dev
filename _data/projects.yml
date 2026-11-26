@@ -1,0 +1,18 @@
+# Projetos exibidos na home. Edite aqui; a home se atualiza sozinha.
+# icon: star | pin (veja _includes/icon.html)
+# tint: cor de fundo do ícone; ink: cor do traço
+- name: Área Kids
+  url: https://areakids.com.br
+  domain: areakids.com.br
+  description: ""
+  icon: star
+  tint: "#FFE9C7"
+  ink: "#9A5B00"
+
+- name: Cague Aqui
+  url: https://cagueaqui.com.br
+  domain: cagueaqui.com.br
+  description: ""
+  icon: pin
+  tint: "#DCE7FF"
+  ink: "#2B59C3"

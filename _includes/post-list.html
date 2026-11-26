@@ -1,0 +1,11 @@
+{%- assign max = include.limit | default: 1000 -%}
+<ul class="post-list">
+    {%- for post in include.posts limit: max %}
+    <li>
+        <a href="{{ post.url | relative_url }}">
+            <span class="post-list-title">{{ post.title }}</span>
+            <time class="mono muted" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        </a>
+    </li>
+    {%- endfor %}
+</ul>
