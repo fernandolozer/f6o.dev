@@ -3,3 +3,6 @@ description: Personal site and blog
 url: "https://f6o.dev"
 baseurl: ""
 permalink: /posts/:title/
+exclude:
+  - README.md
+  - CNAME
