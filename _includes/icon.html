@@ -1,0 +1,8 @@
+{%- case include.name -%}
+{%- when "star" -%}
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ include.ink }}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg>
+{%- when "pin" -%}
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ include.ink }}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0119 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+{%- when "arrow" -%}
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+{%- endcase -%}

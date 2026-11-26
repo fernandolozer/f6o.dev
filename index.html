@@ -4,22 +4,42 @@ title: Home
 description: Personal site and blog
 nav_active: home
 ---
-<section class="hero">
-    <h1>Welcome to f6o.dev</h1>
-    <p class="lead">A personal space for thoughts, projects, and technical insights.</p>
+<section class="container hero">
+    <p class="mono muted">~/fernando</p>
+    <h1>I build small, useful things for the web.</h1>
+    <p class="lead">Software developer. This is where I keep my projects and write about what I learn along the way.</p>
+    <div class="actions">
+        <a href="#projects" class="btn btn-primary">See projects</a>
+        <a href="{{ '/blog/' | relative_url }}" class="btn btn-ghost">Read the blog</a>
+    </div>
 </section>
 
-<section class="featured">
-    <h2>Latest Posts</h2>
-    <div class="posts-grid">
-        {% for post in site.posts limit:3 %}
-        <div class="post-card" onclick="window.location.href='{{ post.url }}'">
-            <h3>{{ post.title }}</h3>
-            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url }}" class="post-link">Read more →</a>
-        </div>
-        {% endfor %}
+<section id="projects" class="container block">
+    <div class="block-head">
+        <h2>Projects</h2>
+        <span class="mono muted">{{ site.data.projects.size | prepend: '0' | slice: -2, 2 }}</span>
     </div>
-    <a href="{{ '/blog' | relative_url }}" class="btn">View All Posts →</a>
+    <div class="project-grid">
+        {%- for p in site.data.projects %}
+        <a href="{{ p.url }}" class="project-card">
+            <div class="project-top">
+                <span class="project-icon" style="background: {{ p.tint }}">{% include icon.html name=p.icon ink=p.ink %}</span>
+                <span class="muted">{% include icon.html name="arrow" %}</span>
+            </div>
+            <div>
+                <h3>{{ p.name }}</h3>
+                {% if p.description != "" %}<p>{{ p.description }}</p>{% endif %}
+            </div>
+            <span class="mono muted">{{ p.domain }}</span>
+        </a>
+        {%- endfor %}
+    </div>
+</section>
+
+<section id="writing" class="container block">
+    <div class="block-head">
+        <h2>Writing</h2>
+        <a href="{{ '/blog/' | relative_url }}">All posts</a>
+    </div>
+    {% include post-list.html posts=site.posts limit=5 %}
 </section>
